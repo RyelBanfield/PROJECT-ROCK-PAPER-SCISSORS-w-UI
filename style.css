@@ -2,11 +2,12 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
+   border: 1px dotted black;
 }
 
-header {
+header h1 {
    text-align: center;
-   margin-top: 10%;
+   padding: 5%;
 }
 
 #playerChoices {
@@ -15,7 +16,17 @@ header {
 }
 
 .btn {
-   width: 100%;
-   margin: 10%;
-   border-radius: 20%;
+   min-width: 75px;
+   height: 75px;
+   margin: 5%;
+   border-radius: 100%;
+}
+
+#results {
+   min-height: 250px;
+}
+
+#resultsHeader {
+   text-align: center;
+   padding: 5%;
 }

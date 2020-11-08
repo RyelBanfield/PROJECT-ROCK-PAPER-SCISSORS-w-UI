@@ -30,13 +30,14 @@ function playRound(playerSelection, computerSelection) {
 // Adds to the player and computer win counters
 function winCounter(roundValue, playerSelection, computerSelection) {
    if (roundValue == 1) {
-      console.log('You Draw! You both chose ' + playerSelection + '.');
+      return ('You Draw! You both chose ' + playerSelection + '.');
    } else if (roundValue == 2) {
-      console.log('You Win! ' + playerSelection + ' beats ' + computerSelection + '.');
       playerWins++;
+      return ('You Win! ' + playerSelection + ' beats ' + computerSelection + '.');
    } else {
-      console.log('You Lose! ' + computerSelection + ' beats ' + playerSelection + '.');
       computerWins++;
+      return ('You Lose! ' + computerSelection + ' beats ' + playerSelection + '.');
+
    }
 }
 
@@ -74,20 +75,59 @@ function game() {
 ////////////////////////////////////////////////////////////////
 
 let buttons = document.querySelectorAll('.btn');
+let results = document.querySelector('#results');
 
 for (button of buttons) {
    button.addEventListener('click', function () {
+
       console.log("Game Round - " + gameRound);
+
       let playerSelection = this.textContent;
       let computerSelection = computerPlay();
       let roundValue = playRound(playerSelection, computerSelection);
+
       console.log('Player Selection: ' + playerSelection);
       console.log('Computer Selection: ' + computerSelection);
-      winCounter(roundValue, playerSelection, computerSelection);
+
+      let roundWinner = winCounter(roundValue, playerSelection, computerSelection);
+
+      console.log(roundWinner);
       console.log('Player Wins: ' + playerWins);
       console.log('Computer Wins: ' + computerWins);
-      gameRound++;
       console.log('------------------------------')
+
+      let gameRoundDiv = document.createElement('div');
+      gameRoundDiv.classList.add('gameRound');
+      gameRoundDiv.textContent = "Game Round - " + gameRound;
+      results.appendChild(gameRoundDiv);
+
+      let playerSelectionDiv = document.createElement('div');
+      playerSelectionDiv.classList.add('playerSelection');
+      playerSelectionDiv.textContent =
+         ' Player Selection: ' + playerSelection
+      results.appendChild(playerSelectionDiv);
+
+      let computerSelectionDiv = document.createElement('div');
+      computerSelectionDiv.classList.add('playerSelection');
+      computerSelectionDiv.textContent =
+         ' Player Selection: ' + computerSelection;
+      results.appendChild(computerSelectionDiv);
+
+      let roundWinnerDiv = document.createElement('div');
+      roundWinnerDiv.classList.add('playerSelection');
+      roundWinnerDiv.textContent = roundWinner;
+      results.appendChild(roundWinnerDiv);
+
+      let playerWinsDiv = document.createElement('div');
+      playerWinsDiv.classList.add('playerSelection');
+      playerWinsDiv.textContent = 'Player Wins: ' + playerWins;
+      results.appendChild(playerWinsDiv);
+
+      let computerWinsDiv = document.createElement('div');
+      computerWinsDiv.classList.add('playerSelection');
+      computerWinsDiv.textContent = 'Computer Wins: ' + computerWins;
+      results.appendChild(computerWinsDiv);
+
+      gameRound++;
    })
 }
-
