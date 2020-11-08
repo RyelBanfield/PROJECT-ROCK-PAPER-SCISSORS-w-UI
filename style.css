@@ -9,7 +9,7 @@ header {
    margin-top: 10%;
 }
 
-#container {
+#playerChoices {
    display: flex;
    justify-content: space-between;
 }

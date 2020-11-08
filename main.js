@@ -20,7 +20,7 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
    if (playerSelection == computerSelection) {
       return 1
-   } else if (playerSelection == 'rock' && computerSelection == 'scissors' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'scissors' && computerSelection == 'paper') {
+   } else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS' || playerSelection == 'PAPER' && computerSelection == 'ROCK' || playerSelection == 'SCISSORS' && computerSelection == 'PAPER') {
       return 2
    } else {
       return 3
@@ -35,14 +35,16 @@ function winCounter(roundValue, playerSelection, computerSelection) {
       console.log('You Win! ' + playerSelection + ' beats ' + computerSelection + '.');
       playerWins++;
    } else {
-      console.log('You Lose! ' + computerSelection + ' beats ' + playerSelection + '.')
+      console.log('You Lose! ' + computerSelection + ' beats ' + playerSelection + '.');
       computerWins++;
    }
 }
 
 // Says who won after the game
 function whoWon(playerWins, computerWins) {
-   if (playerWins > computerWins) {
+   if (playerWins == computerWins) {
+      console.log('It\'s a draw!');
+   } else if (playerWins > computerWins) {
       console.log('You beat the computer!');
    } else {
       console.log('You got beat by the computer!');
@@ -81,8 +83,11 @@ for (button of buttons) {
       let roundValue = playRound(playerSelection, computerSelection);
       console.log('Player Selection: ' + playerSelection);
       console.log('Computer Selection: ' + computerSelection);
-      console.log(roundValue);
+      winCounter(roundValue, playerSelection, computerSelection);
+      console.log('Player Wins: ' + playerWins);
+      console.log('Computer Wins: ' + computerWins);
       gameRound++;
+      console.log('------------------------------')
    })
 }
 
