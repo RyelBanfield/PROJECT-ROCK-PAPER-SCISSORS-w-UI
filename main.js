@@ -12,7 +12,7 @@ function playerPlay() {
 
 // Generates a random choice for the computer
 function computerPlay() {
-   const choices = ["rock", "scissors", "paper"];
+   const choices = ["ROCK", "SCISSORS", "PAPER"];
    return choices[Math.floor(Math.random() * choices.length)];
 }
 
@@ -51,19 +51,38 @@ function whoWon(playerWins, computerWins) {
 
 // Plays 5 rounds of RPS
 function game() {
-   for (i = 0; i < 5; i++) {
+   console.log("Game Round - " + gameRound);
+   let playerSelection = playerPlay();
+   let computerSelection = computerPlay();
+   let roundValue = playRound(playerSelection, computerSelection);
+   console.log('Player Selection: ' + playerSelection);
+   console.log('Computer Selection: ' + computerSelection);
+   winCounter(roundValue, playerSelection, computerSelection);
+   console.log('Player Wins: ' + playerWins);
+   console.log('Computer Wins: ' + computerWins);
+   gameRound++;
+   whoWon(playerWins, computerWins);
+}
+
+// game();
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+let buttons = document.querySelectorAll('.btn');
+
+for (button of buttons) {
+   button.addEventListener('click', function () {
       console.log("Game Round - " + gameRound);
-      let playerSelection = playerPlay();
+      let playerSelection = this.textContent;
       let computerSelection = computerPlay();
       let roundValue = playRound(playerSelection, computerSelection);
       console.log('Player Selection: ' + playerSelection);
       console.log('Computer Selection: ' + computerSelection);
-      winCounter(roundValue, playerSelection, computerSelection);
-      console.log('Player Wins: ' + playerWins);
-      console.log('Computer Wins: ' + computerWins);
+      console.log(roundValue);
       gameRound++;
-   }
-   whoWon(playerWins, computerWins);
+   })
 }
 
-game();
