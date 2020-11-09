@@ -2,7 +2,7 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
-   border: 1px dotted black;
+   /* border: 1px dotted black; */
 }
 
 header h1 {
@@ -23,10 +23,17 @@ header h1 {
 }
 
 #results {
-   min-height: 250px;
+   text-align: center;
+   border: 1px solid black;
+   margin: 5%;
+   padding: 5%;
 }
 
 #resultsHeader {
    text-align: center;
    padding: 5%;
+}
+
+.sepDiv {
+   padding: 1%;
 }

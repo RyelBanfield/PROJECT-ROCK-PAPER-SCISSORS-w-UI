@@ -6,9 +6,9 @@ let playerWins = 0;
 let computerWins = 0;
 
 // Asks the player for their choice
-function playerPlay() {
-   return prompt().toLowerCase();
-}
+// function playerPlay() {
+//    return prompt().toLowerCase();
+// }
 
 // Generates a random choice for the computer
 function computerPlay() {
@@ -52,20 +52,20 @@ function whoWon(playerWins, computerWins) {
    }
 }
 
-// Plays 5 rounds of RPS
-function game() {
-   console.log("Game Round - " + gameRound);
-   let playerSelection = playerPlay();
-   let computerSelection = computerPlay();
-   let roundValue = playRound(playerSelection, computerSelection);
-   console.log('Player Selection: ' + playerSelection);
-   console.log('Computer Selection: ' + computerSelection);
-   winCounter(roundValue, playerSelection, computerSelection);
-   console.log('Player Wins: ' + playerWins);
-   console.log('Computer Wins: ' + computerWins);
-   gameRound++;
-   whoWon(playerWins, computerWins);
-}
+// Plays the game
+// function game() {
+//    console.log("Game Round - " + gameRound);
+//    let playerSelection = playerPlay();
+//    let computerSelection = computerPlay();
+//    let roundValue = playRound(playerSelection, computerSelection);
+//    console.log('Player Selection: ' + playerSelection);
+//    console.log('Computer Selection: ' + computerSelection);
+//    winCounter(roundValue, playerSelection, computerSelection);
+//    console.log('Player Wins: ' + playerWins);
+//    console.log('Computer Wins: ' + computerWins);
+//    gameRound++;
+//    whoWon(playerWins, computerWins);
+// }
 
 // game();
 
@@ -76,6 +76,13 @@ function game() {
 
 let buttons = document.querySelectorAll('.btn');
 let results = document.querySelector('#results');
+
+let gameRoundDiv = document.createElement('div');
+let playerSelectionDiv = document.createElement('div');
+let computerSelectionDiv = document.createElement('div');
+let roundWinnerDiv = document.createElement('div');
+let playerWinsDiv = document.createElement('div');
+let computerWinsDiv = document.createElement('div');
 
 for (button of buttons) {
    button.addEventListener('click', function () {
@@ -96,35 +103,35 @@ for (button of buttons) {
       console.log('Computer Wins: ' + computerWins);
       console.log('------------------------------')
 
-      let gameRoundDiv = document.createElement('div');
-      gameRoundDiv.classList.add('gameRound');
+
+      gameRoundDiv.classList.add('gameRound', 'sepDiv');
       gameRoundDiv.textContent = "Game Round - " + gameRound;
       results.appendChild(gameRoundDiv);
 
-      let playerSelectionDiv = document.createElement('div');
-      playerSelectionDiv.classList.add('playerSelection');
+
+      playerSelectionDiv.classList.add('playerSelection', 'sepDiv');
       playerSelectionDiv.textContent =
          ' Player Selection: ' + playerSelection
       results.appendChild(playerSelectionDiv);
 
-      let computerSelectionDiv = document.createElement('div');
-      computerSelectionDiv.classList.add('playerSelection');
+
+      computerSelectionDiv.classList.add('playerSelection', 'sepDiv');
       computerSelectionDiv.textContent =
          ' Player Selection: ' + computerSelection;
       results.appendChild(computerSelectionDiv);
 
-      let roundWinnerDiv = document.createElement('div');
-      roundWinnerDiv.classList.add('playerSelection');
+
+      roundWinnerDiv.classList.add('playerSelection', 'sepDiv');
       roundWinnerDiv.textContent = roundWinner;
       results.appendChild(roundWinnerDiv);
 
-      let playerWinsDiv = document.createElement('div');
-      playerWinsDiv.classList.add('playerSelection');
+
+      playerWinsDiv.classList.add('playerSelection', 'sepDiv');
       playerWinsDiv.textContent = 'Player Wins: ' + playerWins;
       results.appendChild(playerWinsDiv);
 
-      let computerWinsDiv = document.createElement('div');
-      computerWinsDiv.classList.add('playerSelection');
+
+      computerWinsDiv.classList.add('playerSelection', 'sepDiv');
       computerWinsDiv.textContent = 'Computer Wins: ' + computerWins;
       results.appendChild(computerWinsDiv);
 
