@@ -62,21 +62,21 @@ function whoWon(playerWins, computerWins) {
 for (button of buttons) {
    button.addEventListener('click', function () {
 
-      console.log("Game Round - " + gameRound);
+      // console.log("Game Round - " + gameRound);
 
       let playerSelection = this.textContent;
       let computerSelection = computerPlay();
       let roundValue = playRound(playerSelection, computerSelection);
 
-      console.log('Player Selection: ' + playerSelection);
-      console.log('Computer Selection: ' + computerSelection);
+      // console.log('Player Selection: ' + playerSelection);
+      // console.log('Computer Selection: ' + computerSelection);
 
       let roundWinner = winCounter(roundValue, playerSelection, computerSelection);
 
-      console.log(roundWinner);
-      console.log('Player Wins: ' + playerWins);
-      console.log('Computer Wins: ' + computerWins);
-      console.log('------------------------------')
+      // console.log(roundWinner);
+      // console.log('Player Wins: ' + playerWins);
+      // console.log('Computer Wins: ' + computerWins);
+      // console.log('------------------------------')
 
 
       gameRoundDiv.classList.add('gameRound', 'sepDiv');
