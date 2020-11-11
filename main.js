@@ -5,9 +5,11 @@ let gameRound = 1;
 let playerWins = 0;
 let computerWins = 0;
 
+// Stores HTML elements
 let buttons = document.querySelectorAll('.btn');
 let results = document.querySelector('#results');
 
+// Creates empty divs and stores them
 let gameRoundDiv = document.createElement('div');
 let playerSelectionDiv = document.createElement('div');
 let computerSelectionDiv = document.createElement('div');
@@ -32,16 +34,16 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
-// Adds to the player and computer win counters
+// Adds to the player and computer win counters & returns message
 function winCounter(roundValue, playerSelection, computerSelection) {
    if (roundValue == 1) {
-      return ('You Draw! You both chose ' + playerSelection + '.');
+      return ('You draw this round! You both chose ' + playerSelection + '.');
    } else if (roundValue == 2) {
       playerWins++;
-      return ('You Win! ' + playerSelection + ' beats ' + computerSelection + '.');
+      return ('You win this round! ' + playerSelection + ' beats ' + computerSelection + '.');
    } else {
       computerWins++;
-      return ('You Lose! ' + computerSelection + ' beats ' + playerSelection + '.');
+      return ('You lose this round! ' + computerSelection + ' beats ' + playerSelection + '.');
    }
 }
 
@@ -56,7 +58,7 @@ function whoWon(playerWins, computerWins) {
    }
 }
 
-
+// Does stuff
 for (button of buttons) {
    button.addEventListener('click', function () {
 
