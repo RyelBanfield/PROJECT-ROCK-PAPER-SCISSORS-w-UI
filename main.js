@@ -5,10 +5,15 @@ let gameRound = 1;
 let playerWins = 0;
 let computerWins = 0;
 
-// Asks the player for their choice
-// function playerPlay() {
-//    return prompt().toLowerCase();
-// }
+let buttons = document.querySelectorAll('.btn');
+let results = document.querySelector('#results');
+
+let gameRoundDiv = document.createElement('div');
+let playerSelectionDiv = document.createElement('div');
+let computerSelectionDiv = document.createElement('div');
+let roundWinnerDiv = document.createElement('div');
+let playerWinsDiv = document.createElement('div');
+let computerWinsDiv = document.createElement('div');
 
 // Generates a random choice for the computer
 function computerPlay() {
@@ -37,7 +42,6 @@ function winCounter(roundValue, playerSelection, computerSelection) {
    } else {
       computerWins++;
       return ('You Lose! ' + computerSelection + ' beats ' + playerSelection + '.');
-
    }
 }
 
@@ -52,37 +56,6 @@ function whoWon(playerWins, computerWins) {
    }
 }
 
-// Plays the game
-// function game() {
-//    console.log("Game Round - " + gameRound);
-//    let playerSelection = playerPlay();
-//    let computerSelection = computerPlay();
-//    let roundValue = playRound(playerSelection, computerSelection);
-//    console.log('Player Selection: ' + playerSelection);
-//    console.log('Computer Selection: ' + computerSelection);
-//    winCounter(roundValue, playerSelection, computerSelection);
-//    console.log('Player Wins: ' + playerWins);
-//    console.log('Computer Wins: ' + computerWins);
-//    gameRound++;
-//    whoWon(playerWins, computerWins);
-// }
-
-// game();
-
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-
-let buttons = document.querySelectorAll('.btn');
-let results = document.querySelector('#results');
-
-let gameRoundDiv = document.createElement('div');
-let playerSelectionDiv = document.createElement('div');
-let computerSelectionDiv = document.createElement('div');
-let roundWinnerDiv = document.createElement('div');
-let playerWinsDiv = document.createElement('div');
-let computerWinsDiv = document.createElement('div');
 
 for (button of buttons) {
    button.addEventListener('click', function () {
