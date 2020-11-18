@@ -5,9 +5,13 @@
    /* border: 1px dotted black; */
 }
 
+body {
+   max-height: 80px;
+}
+
 header h1 {
    text-align: center;
-   padding: 5%;
+   padding: 1%;
 }
 
 #playerChoices {
@@ -18,15 +22,16 @@ header h1 {
 .btn {
    min-width: 75px;
    height: 75px;
-   margin: 5%;
+   margin: 2%;
    border-radius: 100%;
 }
 
 #results {
    text-align: center;
    border: 1px solid black;
-   margin: 5%;
+   margin: 2%;
    padding: 5%;
+   min-height: 260px;
 }
 
 #resultsHeader {

@@ -58,52 +58,38 @@ function whoWon(playerWins, computerWins) {
    }
 }
 
-// Does stuff
+// The running of the game
 for (button of buttons) {
    button.addEventListener('click', function () {
-
-      // console.log("Game Round - " + gameRound);
 
       let playerSelection = this.textContent;
       let computerSelection = computerPlay();
       let roundValue = playRound(playerSelection, computerSelection);
 
-      // console.log('Player Selection: ' + playerSelection);
-      // console.log('Computer Selection: ' + computerSelection);
-
       let roundWinner = winCounter(roundValue, playerSelection, computerSelection);
 
-      // console.log(roundWinner);
-      // console.log('Player Wins: ' + playerWins);
-      // console.log('Computer Wins: ' + computerWins);
-      // console.log('------------------------------')
-
       gameRoundDiv.classList.add('gameRound', 'sepDiv');
-      gameRoundDiv.textContent = "Game Round - " + gameRound;
-      results.appendChild(gameRoundDiv);
-
       playerSelectionDiv.classList.add('playerSelection', 'sepDiv');
-      playerSelectionDiv.textContent =
-         ' Player Selection: ' + playerSelection
-      results.appendChild(playerSelectionDiv);
-
       computerSelectionDiv.classList.add('playerSelection', 'sepDiv');
+      roundWinnerDiv.classList.add('playerSelection', 'sepDiv');
+      playerWinsDiv.classList.add('playerSelection', 'sepDiv');
+      computerWinsDiv.classList.add('playerSelection', 'sepDiv');
+
+      gameRoundDiv.textContent = "Game Round - " + gameRound;
+      playerSelectionDiv.textContent =
+         ' Player Selection: ' + playerSelection;
       computerSelectionDiv.textContent =
          ' Player Selection: ' + computerSelection;
-      results.appendChild(computerSelectionDiv);
-
-      roundWinnerDiv.classList.add('playerSelection', 'sepDiv');
       roundWinnerDiv.textContent = roundWinner;
-      results.appendChild(roundWinnerDiv);
-
-      playerWinsDiv.classList.add('playerSelection', 'sepDiv');
       playerWinsDiv.textContent = 'Player Wins: ' + playerWins;
-      results.appendChild(playerWinsDiv);
-
-      computerWinsDiv.classList.add('playerSelection', 'sepDiv');
       computerWinsDiv.textContent = 'Computer Wins: ' + computerWins;
-      results.appendChild(computerWinsDiv);
 
+      results.appendChild(gameRoundDiv);
+      results.appendChild(playerSelectionDiv);
+      results.appendChild(computerSelectionDiv);
+      results.appendChild(roundWinnerDiv);
+      results.appendChild(playerWinsDiv);
+      results.appendChild(computerWinsDiv);
       gameRound++;
    })
 }
