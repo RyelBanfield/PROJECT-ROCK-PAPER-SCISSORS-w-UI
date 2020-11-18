@@ -78,33 +78,27 @@ for (button of buttons) {
       // console.log('Computer Wins: ' + computerWins);
       // console.log('------------------------------')
 
-
       gameRoundDiv.classList.add('gameRound', 'sepDiv');
       gameRoundDiv.textContent = "Game Round - " + gameRound;
       results.appendChild(gameRoundDiv);
-
 
       playerSelectionDiv.classList.add('playerSelection', 'sepDiv');
       playerSelectionDiv.textContent =
          ' Player Selection: ' + playerSelection
       results.appendChild(playerSelectionDiv);
 
-
       computerSelectionDiv.classList.add('playerSelection', 'sepDiv');
       computerSelectionDiv.textContent =
          ' Player Selection: ' + computerSelection;
       results.appendChild(computerSelectionDiv);
 
-
       roundWinnerDiv.classList.add('playerSelection', 'sepDiv');
       roundWinnerDiv.textContent = roundWinner;
       results.appendChild(roundWinnerDiv);
 
-
       playerWinsDiv.classList.add('playerSelection', 'sepDiv');
       playerWinsDiv.textContent = 'Player Wins: ' + playerWins;
       results.appendChild(playerWinsDiv);
-
 
       computerWinsDiv.classList.add('playerSelection', 'sepDiv');
       computerWinsDiv.textContent = 'Computer Wins: ' + computerWins;
