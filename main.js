@@ -79,7 +79,7 @@ for (button of buttons) {
       playerSelectionDiv.textContent =
          ' Player Selection: ' + playerSelection;
       computerSelectionDiv.textContent =
-         ' Player Selection: ' + computerSelection;
+         ' Computer Selection: ' + computerSelection;
       roundWinnerDiv.textContent = roundWinner;
       playerWinsDiv.textContent = 'Player Wins: ' + playerWins;
       computerWinsDiv.textContent = 'Computer Wins: ' + computerWins;
