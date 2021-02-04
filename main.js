@@ -7,7 +7,7 @@ let computerWins = 0;
 
 // Stores HTML elements
 let buttons = document.querySelectorAll(".btn");
-let results = document.querySelector("#results");
+let results = document.querySelector(".results");
 
 // Creates empty divs and stores them
 let gameRoundDiv = document.createElement("div");
@@ -80,19 +80,18 @@ for (button of buttons) {
     let playerSelection = this.textContent;
     let computerSelection = computerPlay();
     let roundValue = playRound(playerSelection, computerSelection);
-
     let roundWinner = winCounter(
       roundValue,
       playerSelection,
       computerSelection
     );
 
-    gameRoundDiv.classList.add("gameRound", "sepDiv");
-    playerSelectionDiv.classList.add("playerSelection", "sepDiv");
-    computerSelectionDiv.classList.add("playerSelection", "sepDiv");
-    roundWinnerDiv.classList.add("playerSelection", "sepDiv");
-    playerWinsDiv.classList.add("playerSelection", "sepDiv");
-    computerWinsDiv.classList.add("playerSelection", "sepDiv");
+    gameRoundDiv.classList.add("gameRound", "sep-div");
+    playerSelectionDiv.classList.add("playerSelection", "sep-div");
+    computerSelectionDiv.classList.add("playerSelection", "sep-div");
+    roundWinnerDiv.classList.add("playerSelection", "sep-div");
+    playerWinsDiv.classList.add("playerSelection", "sep-div");
+    computerWinsDiv.classList.add("playerSelection", "sep-div");
 
     gameRoundDiv.textContent = "Game Round - " + gameRound;
     playerSelectionDiv.textContent = " Player Selection: " + playerSelection;
