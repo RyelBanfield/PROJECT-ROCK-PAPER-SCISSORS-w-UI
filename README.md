@@ -2,7 +2,7 @@
 
 > This is a simple rock-paper-scissors game
 
-![screenshot](./screenshot.png)
+<!-- ![screenshot](./screenshot.png) -->
 
 Additional description about the project and its features.
 
