@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://ryelbanfield.github.io/PROJECT-ROCK-PAPER-SCISSORS-w-UI/)
+[Live Demo Link](https://ryelbanfield.github.io/ROCK-PAPER-SCISSORS-w-UI/)
 
 ## Authors
 
